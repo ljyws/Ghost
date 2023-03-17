@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.18432173032086793 0.6621864449707339 -0.7263157796912736 0.7319348437137749
-  position -0.8612241304341453 0.5630641005123725 0.6715804652218857
+  orientation 0.10788383151874455 0.08891497032617254 -0.9901793811975337 1.7726287811783168
+  position 0.28255788415060873 1.0790976641763625 0.4154078250705503
 }
 TexturedBackground {
 }
@@ -12,7 +12,7 @@ TexturedBackgroundLight {
 Floor {
 }
 Robot {
-  translation 0 0 0.07
+  translation 0 0 0.067
   children [
     Shape {
       appearance DEF base_link_material PBRAppearance {
@@ -199,7 +199,7 @@ Robot {
                     children [
                       Shape {
                         appearance DEF left_material PBRAppearance {
-                          baseColor 0.89804 0.91765 0.92941
+                          baseColor 0.239216 0.243137 0.247059
                           roughness 1
                           metalness 0
                         }
@@ -208,6 +208,7 @@ Robot {
                             "G:/ljyws/Ghost/simulation/robot_urdf/meshes/left.STL"
                           ]
                         }
+                        castShadows FALSE
                       }
                     ]
                     name "left"
@@ -431,7 +432,7 @@ Robot {
                     children [
                       Shape {
                         appearance DEF right_material PBRAppearance {
-                          baseColor 0.89804 0.91765 0.92941
+                          baseColor 0.239216 0.243137 0.247059
                           roughness 1
                           metalness 0
                         }
@@ -504,4 +505,5 @@ Robot {
       -9.899048e-09 -6.384598e-10 -0.000140404
     ]
   }
+  controller "robot"
 }
