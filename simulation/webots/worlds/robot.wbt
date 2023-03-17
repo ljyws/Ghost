@@ -1,0 +1,507 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.18432173032086793 0.6621864449707339 -0.7263157796912736 0.7319348437137749
+  position -0.8612241304341453 0.5630641005123725 0.6715804652218857
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Robot {
+  translation 0 0 0.07
+  children [
+    Shape {
+      appearance DEF base_link_material PBRAppearance {
+        baseColor 0.792157 0.819608 0.933333
+        roughness 1
+        metalness 0
+      }
+      geometry DEF base_link Mesh {
+        url [
+          "G:/ljyws/Ghost/simulation/robot_urdf/meshes/base_link.STL"
+        ]
+      }
+      castShadows FALSE
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.1155 0.049267 0.085
+      }
+      device [
+        RotationalMotor {
+          name "lf1"
+          maxTorque 10000
+        }
+        PositionSensor {
+          name "lf1_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.1155 0.049267 0.085
+        rotation 1 0 0 0.26180000000000075
+        children [
+          Shape {
+            appearance DEF lf1_material PBRAppearance {
+              baseColor 0.792157 0.819608 0.933333
+              roughness 1
+              metalness 0
+            }
+            geometry DEF lf1 Mesh {
+              url [
+                "G:/ljyws/Ghost/simulation/robot_urdf/meshes/lf1.STL"
+              ]
+            }
+            castShadows FALSE
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor -0.0122 0.10488 0.005
+            }
+            device [
+              PositionSensor {
+                name "lf2_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -0.0122 0.10488 0.005
+              rotation 1 0 0 0.44833999999999996
+              children [
+                Shape {
+                  appearance DEF lf2_material PBRAppearance {
+                    baseColor 0.792157 0.819608 0.933333
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF lf2 Mesh {
+                    url [
+                      "G:/ljyws/Ghost/simulation/robot_urdf/meshes/lf2.STL"
+                    ]
+                  }
+                  castShadows FALSE
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    anchor 0 -0.19998 -0.0025
+                  }
+                  endPoint SolidReference {
+                    solidName "left"
+                  }
+                }
+              ]
+              name "lf2"
+              boundingObject USE lf2
+              physics Physics {
+                density -1
+                mass 0.052469
+                centerOfMass [
+                  0.003638 -0.117493 -0.001468
+                ]
+                inertiaMatrix [
+                  0.0002309976 6.08531e-06 0.000225884
+                  2.796833e-22 3.44746e-21 -3.008548e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "lf1"
+        boundingObject USE lf1
+        physics Physics {
+          density -1
+          mass 0.02991
+          centerOfMass [
+            0.005 0.056769 0.002517
+          ]
+          inertiaMatrix [
+            6.178374e-05 3.696599e-06 5.858565e-05
+            -1.646893e-21 -2.935863e-22 -2.94901e-06
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 0
+        anchor -0.1355 -0.050733 0.085
+      }
+      device [
+        RotationalMotor {
+          name "lr1"
+          maxTorque 10000
+        }
+        PositionSensor {
+          name "lr1_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.1355 -0.050733 0.085
+        rotation -1 0 0 0.26180000000000075
+        children [
+          Shape {
+            appearance DEF lr1_material PBRAppearance {
+              baseColor 0.792157 0.819608 0.933333
+              roughness 1
+              metalness 0
+            }
+            geometry DEF lr1 Mesh {
+              url [
+                "G:/ljyws/Ghost/simulation/robot_urdf/meshes/lr1.STL"
+              ]
+            }
+            castShadows FALSE
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor -0.0122 -0.10488 0.005
+            }
+            device [
+              PositionSensor {
+                name "lr2_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -0.0122 -0.10488 0.005
+              rotation -1 0 0 0.4733400000000002
+              children [
+                Shape {
+                  appearance DEF lr2_material PBRAppearance {
+                    baseColor 0.792157 0.819608 0.933333
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF lr2 Mesh {
+                    url [
+                      "G:/ljyws/Ghost/simulation/robot_urdf/meshes/lr2.STL"
+                    ]
+                  }
+                  castShadows FALSE
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    anchor -0.02 0.19998 0.0025
+                  }
+                  device [
+                    RotationalMotor {
+                      name "left"
+                      maxTorque 10000
+                    }
+                    PositionSensor {
+                      name "left_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation -0.02 0.19998 0.0025
+                    rotation 1 0 0 0.7351399999999999
+                    children [
+                      Shape {
+                        appearance DEF left_material PBRAppearance {
+                          baseColor 0.89804 0.91765 0.92941
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF left Mesh {
+                          url [
+                            "G:/ljyws/Ghost/simulation/robot_urdf/meshes/left.STL"
+                          ]
+                        }
+                      }
+                    ]
+                    name "left"
+                    boundingObject USE left
+                    physics Physics {
+                      density -1
+                      mass 0.23011
+                      centerOfMass [
+                        -0.001298 -1.7e-05 6.3e-05
+                      ]
+                      inertiaMatrix [
+                        0.00041723 0.00022525 0.00022481
+                        1.3556e-08 -4.9618e-08 1.2766e-07
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "lr2"
+              boundingObject USE lr2
+              physics Physics {
+                density -1
+                mass 0.049557
+                centerOfMass [
+                  0.004408 0.101938 0.001218
+                ]
+                inertiaMatrix [
+                  0.0002370081 6.428126e-06 0.0002313652
+                  -1.57167e-09 7.147792e-09 -3.081594e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "lr1"
+        boundingObject USE lr1
+        physics Physics {
+          density -1
+          mass 0.02991
+          centerOfMass [
+            0.005 -0.056751 0.002895
+          ]
+          inertiaMatrix [
+            6.178374e-05 3.634796e-06 5.864745e-05
+            1.360348e-20 -3.186187e-22 2.302282e-06
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 0
+        anchor 0.1155 0.049267 0.085
+      }
+      device [
+        RotationalMotor {
+          name "rf1"
+          maxTorque 10000
+        }
+        PositionSensor {
+          name "rf1_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.1155 0.049267 0.085
+        rotation 1 0 0 0.26180000000000075
+        children [
+          Shape {
+            appearance DEF rf1_material PBRAppearance {
+              baseColor 0.792157 0.819608 0.933333
+              roughness 1
+              metalness 0
+            }
+            geometry DEF rf1 Mesh {
+              url [
+                "G:/ljyws/Ghost/simulation/robot_urdf/meshes/rf1.STL"
+              ]
+            }
+            castShadows FALSE
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0.0122 0.10488 0.005
+            }
+            device [
+              PositionSensor {
+                name "rf2_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.0122 0.10488 0.005
+              rotation 1 0 0 0.4733400000000002
+              children [
+                Shape {
+                  appearance DEF rf2_material PBRAppearance {
+                    baseColor 0.792157 0.819608 0.933333
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF rf2 Mesh {
+                    url [
+                      "G:/ljyws/Ghost/simulation/robot_urdf/meshes/rf2.STL"
+                    ]
+                  }
+                  castShadows FALSE
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    anchor 0 -0.199984 0.0025
+                  }
+                  endPoint SolidReference {
+                    solidName "right"
+                  }
+                }
+              ]
+              name "rf2"
+              boundingObject USE rf2
+              physics Physics {
+                density -1
+                mass 0.052469
+                centerOfMass [
+                  -0.003638 -0.106864 0.001335
+                ]
+                inertiaMatrix [
+                  0.0002309976 6.072294e-06 0.000225897
+                  3.897979e-21 -1.030825e-21 2.488032e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "rf1"
+        boundingObject USE rf1
+        physics Physics {
+          density -1
+          mass 0.02991
+          centerOfMass [
+            -0.005 0.056769 0.002517
+          ]
+          inertiaMatrix [
+            6.178374e-05 3.696599e-06 5.858565e-05
+            1.11522e-20 2.317212e-22 -2.94901e-06
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 0
+        anchor 0.1355 -0.050733 0.085
+      }
+      device [
+        RotationalMotor {
+          name "rr1"
+          maxTorque 10000
+        }
+        PositionSensor {
+          name "rr1_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.1355 -0.050733 0.085
+        rotation -1 0 0 0.26180000000000075
+        children [
+          Shape {
+            appearance DEF rr1_material PBRAppearance {
+              baseColor 0.792157 0.819608 0.933333
+              roughness 1
+              metalness 0
+            }
+            geometry DEF rr1 Mesh {
+              url [
+                "G:/ljyws/Ghost/simulation/robot_urdf/meshes/rr1.STL"
+              ]
+            }
+            castShadows FALSE
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0.0122 -0.10488 0.005
+            }
+            device [
+              PositionSensor {
+                name "rr2_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.0122 -0.10488 0.005
+              rotation -1 0 0 0.4733400000000002
+              children [
+                Shape {
+                  appearance DEF rr2_material PBRAppearance {
+                    baseColor 0.79216 0.81961 0.93333
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF rr2 Mesh {
+                    url [
+                      "G:/ljyws/Ghost/simulation/robot_urdf/meshes/rr2.STL"
+                    ]
+                  }
+                  castShadows FALSE
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis -1 0 0
+                    anchor 0.02 0.199984 0.0025
+                  }
+                  device [
+                    RotationalMotor {
+                      name "right"
+                      maxTorque 10000
+                    }
+                    PositionSensor {
+                      name "right_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0.02 0.199984 0.0025
+                    rotation 1 0 0 0.7351359999999998
+                    children [
+                      Shape {
+                        appearance DEF right_material PBRAppearance {
+                          baseColor 0.89804 0.91765 0.92941
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF right Mesh {
+                          url [
+                            "G:/ljyws/Ghost/simulation/robot_urdf/meshes/right.STL"
+                          ]
+                        }
+                        castShadows FALSE
+                      }
+                    ]
+                    name "right"
+                    boundingObject USE right
+                    physics Physics {
+                      density -1
+                      mass 0.23011
+                      centerOfMass [
+                        0.001298 -2.7e-05 6e-05
+                      ]
+                      inertiaMatrix [
+                        0.00041723 0.00022519 0.00022487
+                        -2.1499e-08 4.6728e-08 1.9067e-07
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "rr2"
+              boundingObject USE rr2
+              physics Physics {
+                density -1
+                mass 0.049557
+                centerOfMass [
+                  -0.004408 0.10198 0.001296
+                ]
+                inertiaMatrix [
+                  0.00023701 6.4644e-06 0.00023133
+                  6.7939e-09 2.7211e-09 -3.0569e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "rr1"
+        boundingObject USE rr1
+        physics Physics {
+          density -1
+          mass 0.02991
+          centerOfMass [
+            -0.005 -0.056751 0.002895
+          ]
+          inertiaMatrix [
+            6.178374e-05 3.634796e-06 5.864745e-05
+            -1.607317e-20 5.729553e-23 2.302282e-06
+          ]
+        }
+      }
+    }
+  ]
+  name "RobotUrdf"
+  boundingObject USE base_link
+  physics Physics {
+    density -1
+    mass 0.802449
+    centerOfMass [
+      -3e-06 -0.002789 0.069285
+    ]
+    inertiaMatrix [
+      0.001427361 0.0009774966 0.001536992
+      -9.899048e-09 -6.384598e-10 -0.000140404
+    ]
+  }
+}
