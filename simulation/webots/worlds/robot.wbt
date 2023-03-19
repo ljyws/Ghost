@@ -14,6 +14,14 @@ Floor {
 Robot {
   translation 0 0 0.067
   children [
+    Accelerometer {
+      name "acc"
+    }
+    Gyro {
+    }
+    InertialUnit {
+      name "inertial_unit"
+    }
     Shape {
       appearance DEF base_link_material PBRAppearance {
         baseColor 0.792157 0.819608 0.933333
