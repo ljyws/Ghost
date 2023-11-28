@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.08834466151074086 0.038324367865942274 -0.9953524318603079 2.326346832809637
-  position 0.8370011718030738 1.302802111330454 0.3494846141326526
+  orientation 0.09880514592450686 0.5560286515747145 -0.8252694600958173 0.42413751293169677
+  position -1.9875518654110222 0.48258840554506793 0.5380536108838992
 }
 TexturedBackground {
 }
@@ -12,7 +12,7 @@ TexturedBackgroundLight {
 Floor {
 }
 Robot {
-  translation 0 0 0.067
+  translation 0 0 0.077
   children [
     Accelerometer {
       name "acc"
@@ -50,7 +50,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.1155 0.049267 0.085
-        rotation 1 0 0 0.26180000000000075
+        rotation 1 0 0 0.26179999999999903
         children [
           Shape {
             appearance DEF lf1_material PBRAppearance {
@@ -76,7 +76,7 @@ Robot {
             ]
             endPoint Solid {
               translation -0.0122 0.10488 0.005
-              rotation 1 0 0 0.44833999999999996
+              rotation 1 0 0 0.44833999999999896
               children [
                 Shape {
                   appearance DEF lf2_material PBRAppearance {
@@ -147,7 +147,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.1355 -0.050733 0.085
-        rotation -1 0 0 0.26180000000000075
+        rotation -1 0 0 0.2618000000000025
         children [
           Shape {
             appearance DEF lr1_material PBRAppearance {
@@ -173,7 +173,7 @@ Robot {
             ]
             endPoint Solid {
               translation -0.0122 -0.10488 0.005
-              rotation -1 0 0 0.4733400000000002
+              rotation -1 0 0 0.47333999999999266
               children [
                 Shape {
                   appearance DEF lr2_material PBRAppearance {
@@ -203,7 +203,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation -0.02 0.19998 0.0025
-                    rotation 1 0 0 0.7351399999999999
+                    rotation 1.864481370378885e-16 1 -9.813059844099393e-18 1.5708000000000006
                     children [
                       Shape {
                         appearance DEF left_material PBRAppearance {
@@ -211,16 +211,18 @@ Robot {
                           roughness 1
                           metalness 0
                         }
-                        geometry DEF left Mesh {
-                          url [
-                            "G:/ljyws/Ghost/simulation/robot_urdf/meshes/left.STL"
-                          ]
+                        geometry Cylinder {
+                          height 0.03
+                          radius 0.05
                         }
                         castShadows FALSE
                       }
                     ]
                     name "left"
-                    boundingObject USE left
+                    boundingObject Cylinder {
+                      height 0.03
+                      radius 0.05
+                    }
                     physics Physics {
                       density -1
                       mass 0.23011
@@ -282,7 +284,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.1155 0.049267 0.085
-        rotation 1 0 0 0.26180000000000075
+        rotation 1 0 0 0.26179999999999903
         children [
           Shape {
             appearance DEF rf1_material PBRAppearance {
@@ -379,7 +381,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.1355 -0.050733 0.085
-        rotation -1 0 0 0.26180000000000075
+        rotation -1 0 0 0.26179999999999226
         children [
           Shape {
             appearance DEF rr1_material PBRAppearance {
@@ -405,7 +407,7 @@ Robot {
             ]
             endPoint Solid {
               translation 0.0122 -0.10488 0.005
-              rotation -1 0 0 0.4733400000000002
+              rotation -1 0 0 0.4733399999999822
               children [
                 Shape {
                   appearance DEF rr2_material PBRAppearance {
@@ -436,7 +438,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 0.02 0.199984 0.0025
-                    rotation 1 0 0 0.7351359999999998
+                    rotation -4.710268725167711e-16 1 -3.925223937639759e-17 1.570799999999999
                     children [
                       Shape {
                         appearance DEF right_material PBRAppearance {
@@ -444,16 +446,18 @@ Robot {
                           roughness 1
                           metalness 0
                         }
-                        geometry DEF right Mesh {
-                          url [
-                            "G:/ljyws/Ghost/simulation/robot_urdf/meshes/right.STL"
-                          ]
+                        geometry Cylinder {
+                          height 0.03
+                          radius 0.05
                         }
                         castShadows FALSE
                       }
                     ]
                     name "right"
-                    boundingObject USE right
+                    boundingObject Cylinder {
+                      height 0.03
+                      radius 0.05
+                    }
                     physics Physics {
                       density -1
                       mass 0.23011
@@ -513,5 +517,5 @@ Robot {
       -9.899048e-09 -6.384598e-10 -0.000140404
     ]
   }
-  controller "main"
+  controller "my_controller"
 }
