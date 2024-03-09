@@ -1,9 +1,15 @@
-#VRML_SIM R2022a utf8
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+
 WorldInfo {
+  basicTimeStep 16
 }
 Viewpoint {
-  orientation 0.09880514592450686 0.5560286515747145 -0.8252694600958173 0.42413751293169677
-  position -1.9875518654110222 0.48258840554506793 0.5380536108838992
+  orientation 0.16728353384849348 0.5923654847512955 -0.7881112559648686 0.6881252823543423
+  position -0.7990784370462884 0.466300365978865 0.45215447783178514
 }
 TexturedBackground {
 }
@@ -24,13 +30,13 @@ Robot {
     }
     Shape {
       appearance DEF base_link_material PBRAppearance {
-        baseColor 0.792157 0.819608 0.933333
+        baseColor 1 0 1
         roughness 1
         metalness 0
       }
-      geometry DEF base_link Mesh {
+      geometry DEF lf1 Mesh {
         url [
-          "G:/ljyws/Ghost/simulation/robot_urdf/meshes/base_link.STL"
+          "../../robot_urdf/meshes/base_link.STL"
         ]
       }
       castShadows FALSE
@@ -54,13 +60,13 @@ Robot {
         children [
           Shape {
             appearance DEF lf1_material PBRAppearance {
-              baseColor 0.792157 0.819608 0.933333
+              baseColor 0 1 1
               roughness 1
               metalness 0
             }
             geometry DEF lf1 Mesh {
               url [
-                "G:/ljyws/Ghost/simulation/robot_urdf/meshes/lf1.STL"
+                "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/lf1.STL"
               ]
             }
             castShadows FALSE
@@ -80,13 +86,13 @@ Robot {
               children [
                 Shape {
                   appearance DEF lf2_material PBRAppearance {
-                    baseColor 0.792157 0.819608 0.933333
+                    baseColor 0 1 1
                     roughness 1
                     metalness 0
                   }
                   geometry DEF lf2 Mesh {
                     url [
-                      "G:/ljyws/Ghost/simulation/robot_urdf/meshes/lf2.STL"
+                      "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/lf2.STL"
                     ]
                   }
                   castShadows FALSE
@@ -104,7 +110,7 @@ Robot {
               boundingObject USE lf2
               physics Physics {
                 density -1
-                mass 0.052469
+                mass 1
                 centerOfMass [
                   0.003638 -0.117493 -0.001468
                 ]
@@ -120,7 +126,7 @@ Robot {
         boundingObject USE lf1
         physics Physics {
           density -1
-          mass 0.02991
+          mass 2
           centerOfMass [
             0.005 0.056769 0.002517
           ]
@@ -151,13 +157,13 @@ Robot {
         children [
           Shape {
             appearance DEF lr1_material PBRAppearance {
-              baseColor 0.792157 0.819608 0.933333
+              baseColor 0 1 1
               roughness 1
               metalness 0
             }
             geometry DEF lr1 Mesh {
               url [
-                "G:/ljyws/Ghost/simulation/robot_urdf/meshes/lr1.STL"
+                "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/lr1.STL"
               ]
             }
             castShadows FALSE
@@ -177,13 +183,13 @@ Robot {
               children [
                 Shape {
                   appearance DEF lr2_material PBRAppearance {
-                    baseColor 0.792157 0.819608 0.933333
+                    baseColor 0 1 1
                     roughness 1
                     metalness 0
                   }
                   geometry DEF lr2 Mesh {
                     url [
-                      "G:/ljyws/Ghost/simulation/robot_urdf/meshes/lr2.STL"
+                      "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/lr2.STL"
                     ]
                   }
                   castShadows FALSE
@@ -207,7 +213,7 @@ Robot {
                     children [
                       Shape {
                         appearance DEF left_material PBRAppearance {
-                          baseColor 0.239216 0.243137 0.247059
+                          baseColor 0.333333 0.333333 0.498039
                           roughness 1
                           metalness 0
                         }
@@ -225,7 +231,7 @@ Robot {
                     }
                     physics Physics {
                       density -1
-                      mass 0.23011
+                      mass 1
                       centerOfMass [
                         -0.001298 -1.7e-05 6.3e-05
                       ]
@@ -241,7 +247,7 @@ Robot {
               boundingObject USE lr2
               physics Physics {
                 density -1
-                mass 0.049557
+                mass 1
                 centerOfMass [
                   0.004408 0.101938 0.001218
                 ]
@@ -257,7 +263,7 @@ Robot {
         boundingObject USE lr1
         physics Physics {
           density -1
-          mass 0.02991
+          mass 2
           centerOfMass [
             0.005 -0.056751 0.002895
           ]
@@ -288,13 +294,13 @@ Robot {
         children [
           Shape {
             appearance DEF rf1_material PBRAppearance {
-              baseColor 0.792157 0.819608 0.933333
+              baseColor 0 1 1
               roughness 1
               metalness 0
             }
             geometry DEF rf1 Mesh {
               url [
-                "G:/ljyws/Ghost/simulation/robot_urdf/meshes/rf1.STL"
+                "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/rf1.STL"
               ]
             }
             castShadows FALSE
@@ -314,13 +320,13 @@ Robot {
               children [
                 Shape {
                   appearance DEF rf2_material PBRAppearance {
-                    baseColor 0.792157 0.819608 0.933333
+                    baseColor 0 1 1
                     roughness 1
                     metalness 0
                   }
                   geometry DEF rf2 Mesh {
                     url [
-                      "G:/ljyws/Ghost/simulation/robot_urdf/meshes/rf2.STL"
+                      "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/rf2.STL"
                     ]
                   }
                   castShadows FALSE
@@ -338,7 +344,7 @@ Robot {
               boundingObject USE rf2
               physics Physics {
                 density -1
-                mass 0.052469
+                mass 1
                 centerOfMass [
                   -0.003638 -0.106864 0.001335
                 ]
@@ -354,7 +360,7 @@ Robot {
         boundingObject USE rf1
         physics Physics {
           density -1
-          mass 0.02991
+          mass 2
           centerOfMass [
             -0.005 0.056769 0.002517
           ]
@@ -385,13 +391,13 @@ Robot {
         children [
           Shape {
             appearance DEF rr1_material PBRAppearance {
-              baseColor 0.792157 0.819608 0.933333
+              baseColor 0 1 1
               roughness 1
               metalness 0
             }
             geometry DEF rr1 Mesh {
               url [
-                "G:/ljyws/Ghost/simulation/robot_urdf/meshes/rr1.STL"
+                "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/rr1.STL"
               ]
             }
             castShadows FALSE
@@ -411,13 +417,13 @@ Robot {
               children [
                 Shape {
                   appearance DEF rr2_material PBRAppearance {
-                    baseColor 0.79216 0.81961 0.93333
+                    baseColor 0 1 1
                     roughness 1
                     metalness 0
                   }
                   geometry DEF rr2 Mesh {
                     url [
-                      "G:/ljyws/Ghost/simulation/robot_urdf/meshes/rr2.STL"
+                      "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/rr2.STL"
                     ]
                   }
                   castShadows FALSE
@@ -442,7 +448,7 @@ Robot {
                     children [
                       Shape {
                         appearance DEF right_material PBRAppearance {
-                          baseColor 0.239216 0.243137 0.247059
+                          baseColor 0.333333 0.333333 0.498039
                           roughness 1
                           metalness 0
                         }
@@ -460,7 +466,7 @@ Robot {
                     }
                     physics Physics {
                       density -1
-                      mass 0.23011
+                      mass 1
                       centerOfMass [
                         0.001298 -2.7e-05 6e-05
                       ]
@@ -476,7 +482,7 @@ Robot {
               boundingObject USE rr2
               physics Physics {
                 density -1
-                mass 0.049557
+                mass 1
                 centerOfMass [
                   -0.004408 0.10198 0.001296
                 ]
@@ -492,7 +498,7 @@ Robot {
         boundingObject USE rr1
         physics Physics {
           density -1
-          mass 0.02991
+          mass 2
           centerOfMass [
             -0.005 -0.056751 0.002895
           ]
@@ -505,10 +511,14 @@ Robot {
     }
   ]
   name "RobotUrdf"
-  boundingObject USE base_link
+  boundingObject DEF base_link Mesh {
+    url [
+      "F:/Desktop/ljyws/Ghost/simulation/robot_urdf/meshes/base_link.STL"
+    ]
+  }
   physics Physics {
     density -1
-    mass 0.802449
+    mass 2
     centerOfMass [
       -3e-06 -0.002789 0.069285
     ]
@@ -517,5 +527,5 @@ Robot {
       -9.899048e-09 -6.384598e-10 -0.000140404
     ]
   }
-  controller "my_controller"
+  controller "<none>"
 }
